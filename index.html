@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Recetas</title>
+</head>
+<body>
+    <h1>Lista de Recetas</h1>
+    <a href="{{ url_for('nueva_receta') }}">Agregar Nueva Receta</a>
+    <ul>
+        {% for receta in recetas %}
+            <li>
+                <a href="{{ url_for('ver_receta', receta_id=receta.id) }}">
+                    {{ receta.nombre }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
